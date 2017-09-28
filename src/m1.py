@@ -30,8 +30,8 @@ def main():
     #      run_test_init()
     # if m1_tests.is_implemented('get_distance_from'):
     #     run_test_get_distance_from()
-    if m1_tests.is_implemented('swell_or_shrink_once'):
-        run_test_swell_or_shrink_once()
+    # if m1_tests.is_implemented('swell_or_shrink_once'):
+    #     run_test_swell_or_shrink_once()
     if m1_tests.is_implemented('swell_or_shrink_repeatedly', 4):
         run_test_swell_or_shrink_repeatedly()
     if m1_tests.is_implemented('swallow'):
@@ -340,11 +340,16 @@ class CircleChanger(object):
             :type times_to_swell_or_shrink:  int
         """
         ################################################################
-        # TODO: 5.
+        # Done: 5.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
+
+        for k in range(times_to_swell_or_shrink):
+            self.swell_or_shrink_once(amount_to_swell_or_shrink)
+            self.draw()
+            self.swell_or_shrink_once(-amount_to_swell_or_shrink)
 
     def swallow(self, other_circle_changer):
         """
