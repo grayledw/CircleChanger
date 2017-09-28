@@ -92,7 +92,7 @@ class CircleChanger(object):
         # --------------------------------------------------------------
 
         ################################################################
-        # TODO: 2.
+        # Done: 2.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_init   function (below).
         #   Third, implement and test this method.
@@ -102,12 +102,9 @@ class CircleChanger(object):
         # TEST function before implementing the method that it tests.
         ################################################################
 
-        self.x = int(x)
-        self.y = int(y)
-        self.center = rg.Point(self.x, self.y)
-        self.circlechanger = rg.Circle(rg.Point(x, y), radius)
-        self.radius = radius
-        self.fill = str(fill_color)
+
+        self.circle = rg.Circle(rg.Point(x,y), radius)
+        self.circle.fill_color = fill_color
         self.colors = colors
 
 
