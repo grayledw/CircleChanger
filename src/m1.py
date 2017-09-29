@@ -36,12 +36,12 @@ def main():
         #run_test_swell_or_shrink_repeatedly()
     if m1_tests.is_implemented('swallow'):
         run_test_swallow()
-    if m1_tests.is_implemented('change_color'):
-        run_test_change_color()
-    if m1_tests.is_implemented('change_to_original_color'):
-        run_test_change_to_original_color()
-    if m1_tests.is_implemented('change_to_next_color_in_tuple'):
-        run_test_change_to_next_color_in_tuple()
+    # if m1_tests.is_implemented('change_color'):
+    #     run_test_change_color()
+    # if m1_tests.is_implemented('change_to_original_color'):
+    #     run_test_change_to_original_color()
+    # if m1_tests.is_implemented('change_to_next_color_in_tuple'):
+    #     run_test_change_to_next_color_in_tuple()
 
 
 ########################################################################
@@ -390,11 +390,12 @@ class CircleChanger(object):
         ################################################################
 
         distance = (self.get_distance_from(other_circle_changer.circle.center))
-        radius = int(distance) / 2
+        radius = distance / 2
 
-        #new_x = self.circle.center.x + (distance / 2)
-        new_x = ((self.circle.center.x + other_circle_changer.circle.center.x) / 2)
-        new_y = ((self.circle.center.y + other_circle_changer.circle.center.y) / 2)
+        new_x = (other_circle_changer.circle.center.x + distance) / 2
+        new_y = self.circle.center.y
+        #new_x = ((self.circle.center.x + other_circle_changer.circle.center.x) / 2)
+        #new_y = ((self.circle.center.y + other_circle_changer.circle.center.y) / 2)
         new_fill_color = 'red'
         new_radius = radius
         new_colors = self.colors + other_circle_changer.colors
