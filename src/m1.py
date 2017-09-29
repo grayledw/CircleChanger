@@ -107,7 +107,7 @@ class CircleChanger(object):
         self.circle.fill_color = fill_color
         self.colors = colors
         self.original_fill = fill_color
-
+        self.current_index = 0
 
     def __repr__(self):
         """
@@ -483,11 +483,14 @@ class CircleChanger(object):
         fill color have no effect on or interaction with this method.
         """
         ################################################################
-        # TODO: 9.
+        # Done: 9.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_to_next_color_in_tuple
         #   function (below).  Third, implement and test this method.
         ################################################################
+
+        self.circle.fill_color = self.colors[self.current_index]
+        self.current_index = (self.current_index + 1) % len(self.colors)
 
 
 
