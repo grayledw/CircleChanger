@@ -442,13 +442,13 @@ class CircleChanger(object):
                was constructed.
         """
         ################################################################
-        # TODO: 8.
+        # Done: 8.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_to_original_color   function
         #   (below).  Third, implement and test this method.
         ################################################################
 
-        self.fill_color = self.original_fill
+        self.circle.fill_color = self.original_fill
 
     def change_to_next_color_in_tuple(self):
         """
