@@ -392,10 +392,19 @@ class CircleChanger(object):
         distance = (self.get_distance_from(other_circle_changer.circle.center))
         radius = distance / 2
 
-        new_x = (other_circle_changer.circle.center.x + distance) / 2
-        new_y = self.circle.center.y
+        #new_x = (other_circle_changer.circle.center.x + distance) / 2
+        #new_y = self.circle.center.y
         #new_x = ((self.circle.center.x + other_circle_changer.circle.center.x) / 2)
         #new_y = ((self.circle.center.y + other_circle_changer.circle.center.y) / 2)
+
+        point1 = rg.Point(self.circle.center.x, self.circle.center.y)
+        point2 = rg.Point(other_circle_changer.circle.center.x, other_circle_changer.circle.center.y)
+
+        new_point = point1.halfway_to(point2)
+
+        new_x = new_point.x
+        new_y = new_point.y
+
         new_fill_color = 'red'
         new_radius = radius
         new_colors = self.colors + other_circle_changer.colors
